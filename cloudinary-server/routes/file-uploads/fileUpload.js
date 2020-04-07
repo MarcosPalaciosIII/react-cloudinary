@@ -20,4 +20,35 @@ router.patch(
     }
 );
 
+router.patch(
+    "/product/imageArray/:productId",
+    uploadCloud.array("imageArray"),
+    (req, res, next) => {
+        console.log({ theFile: req.files });
+        Product.findById(req.params.productId)
+            .then((productFromDB) => {
+                console.log({ productFromDB });
+                req.files.forEach((file) => {
+                    productFromDB.imageArray.push(file.url);
+                });
+                productFromDB
+                    .save()
+                    .then((updatedProduct) => {
+                        console.log({ updatedProduct });
+                        res.status(200).json(updatedProduct);
+                    })
+                    .catch((err) =>
+                        res
+                            .status(400)
+                            .json({ message: "error pushing urls: ", err })
+                    );
+            })
+            .catch((err) =>
+                res
+                    .status(400)
+                    .json({ message: "error finding product: ", err })
+            );
+    }
+);
+
 module.exports = router;
