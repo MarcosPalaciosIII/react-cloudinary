@@ -56,5 +56,6 @@ app.use(
 
 app.use("/api", require("./routes/product-routes/product"));
 app.use("/api", require("./routes/file-uploads/fileUpload"));
+app.use("/api", require("./routes/seeds/seed-route"));
 
 module.exports = app;
