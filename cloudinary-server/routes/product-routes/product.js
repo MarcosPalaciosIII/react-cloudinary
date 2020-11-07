@@ -5,8 +5,10 @@ const uploadCloud = require("../../config/cloudinary-setup");
 
 // Product Main Info
 router.post("/add-product", uploadCloud.single("image"), (req, res, next) => {
+    console.log({ file: req.file });
     const productInputInfo = req.body;
-    productInputInfo.image = req.file.url;
+    productInputInfo.image = req.file.url; // use file.url when using regular cloudinary method to get the image url
+    // productInputInfo.image = req.file.path; // use file.path when using cloudinary.v2 method to get the image url
 
     Product.create(productInputInfo)
         .then((newlyCreatedProduct) => {
