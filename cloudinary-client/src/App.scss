@@ -1,0 +1,105 @@
+@import "variables", "mixins";
+
+.App {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    @include center-content;
+    background-color: #282c34;
+    min-height: 100vh;
+    flex-direction: column;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+hr {
+    width: 100%;
+}
+
+nav {
+    &.nav-style {
+        @include center-content;
+        justify-content: space-between;
+        padding: $general-padding;
+        background-color: #adced1;
+        position: fixed;
+        top: 0;
+        height: 3rem;
+        width: 95vw;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+form {
+    &.form {
+        background-color: purple;
+
+        &__display {
+            @include center-content;
+            flex-direction: column;
+            margin-bottom: 2rem;
+
+            input {
+                margin-bottom: 2rem;
+            }
+
+            button {
+                padding: 1rem 2rem;
+                border-radius: 0.5rem;
+                color: white;
+                background-color: $button-background;
+                font-weight: bolder;
+                font-size: medium;
+            }
+
+            &-inputs {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                width: 70vw;
+
+                &--name {
+                    // $i: 0;
+                    //     @for $i from 1 through 3 {
+                    //         #{$i}: 1 {
+
+                    //         };
+
+                    //         #{$i}: 2 {
+
+                    //         };
+                    //     }
+                }
+            }
+        }
+    }
+}

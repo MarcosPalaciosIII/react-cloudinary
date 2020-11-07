@@ -98,7 +98,7 @@ class ProductDetails extends Component {
         return (
             <form
                 onSubmit={(event) => this.handleSubmit(event)}
-                className="formDisplay"
+                className="form form__display"
             >
                 <img
                     src={this.state.image}
@@ -106,13 +106,18 @@ class ProductDetails extends Component {
                     alt="Product Image"
                 />
 
-                <input
-                    id="imageInput"
-                    type="file"
-                    name="image"
-                    onChange={(event) => this.handleImageChange(event)}
-                    ref={(ref) => (this.fileInput = ref)}
-                />
+                <label>
+                    Choose image to change current:{" "}
+                    <input
+                        id="imageInput"
+                        type="file"
+                        name="image"
+                        onChange={(event) => this.handleImageChange(event)}
+                        ref={(ref) => (this.fileInput = ref)}
+                    />
+                </label>
+
+                <hr />
 
                 <div>
                     {this.state.imageArray.map((image, index) => {
@@ -131,16 +136,19 @@ class ProductDetails extends Component {
                     })}
                 </div>
 
-                <input
-                    id="imageInput"
-                    type="file"
-                    name="images"
-                    multiple
-                    onChange={(event) => this.handleMultiImageChange(event)}
-                    ref={(ref) => (this.multiFileInput = ref)}
-                />
+                <label>
+                    Add Images to add to product collection:{" "}
+                    <input
+                        id="imageInput"
+                        type="file"
+                        name="images"
+                        multiple
+                        onChange={(event) => this.handleMultiImageChange(event)}
+                        ref={(ref) => (this.multiFileInput = ref)}
+                    />
+                </label>
 
-                <div className="form-inputs">
+                <div className="form__display-inputs">
                     <label>
                         <h3>
                             Title:
