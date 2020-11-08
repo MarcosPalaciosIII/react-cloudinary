@@ -1,12 +1,23 @@
 @import "variables";
 
-@function calcRem($size) {
-    $remSize: $size / 16px;
-    @return $remSize * 1rem;
-}
-
 @mixin center-content {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin input-background($index) {
+    &--name-#{$index} {
+        @if $index == 0 {
+            background-color: blue;
+        } @else if $index == 1 {
+            background-color: orange;
+        } @else if $index == 2 {
+            background-color: red;
+        } @else if $index == 3 {
+            background-color: green;
+        } @else {
+            background-color: white;
+        }
+    }
 }

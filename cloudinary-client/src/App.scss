@@ -59,45 +59,46 @@ nav {
     }
 }
 
-form {
-    &.form {
-        background-color: purple;
+.form {
+    background-color: purple;
 
-        &__display {
-            @include center-content;
-            flex-direction: column;
+    &__display {
+        @include center-content;
+        flex-direction: column;
+        margin-bottom: 2rem;
+
+        input {
             margin-bottom: 2rem;
+        }
 
-            input {
-                margin-bottom: 2rem;
-            }
+        button {
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            color: white;
+            background-color: $button-background;
+            font-weight: bolder;
+            font-size: medium;
+        }
 
-            button {
-                padding: 1rem 2rem;
-                border-radius: 0.5rem;
-                color: white;
-                background-color: $button-background;
-                font-weight: bolder;
-                font-size: medium;
-            }
+        &-inputs {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 70vw;
 
-            &-inputs {
-                display: flex;
-                justify-content: space-between;
-                flex-direction: row;
-                width: 70vw;
-
-                &--name {
-                    // $i: 0;
-                    //     @for $i from 1 through 3 {
-                    //         #{$i}: 1 {
-
-                    //         };
-
-                    //         #{$i}: 2 {
-
-                    //         };
-                    //     }
+            @for $i from 0 through 3 {
+                &--input-#{$i} {
+                    @if $i == 0 {
+                        background-color: blue;
+                    } @else if $i == 1 {
+                        background-color: orange;
+                    } @else if $i == 2 {
+                        background-color: red;
+                    } @else if $i == 3 {
+                        background-color: green;
+                    } @else {
+                        background-color: white;
+                    }
                 }
             }
         }

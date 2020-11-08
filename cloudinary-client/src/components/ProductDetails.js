@@ -150,7 +150,7 @@ class ProductDetails extends Component {
 
                 <div className="form__display-inputs">
                     <label>
-                        <h3>
+                        <h4 className="form__display-inputs--input-0">
                             Title:
                             <input
                                 type="text"
@@ -158,10 +158,10 @@ class ProductDetails extends Component {
                                 name="title"
                                 value={this.state.title}
                             />
-                        </h3>
+                        </h4>
                     </label>
                     <label>
-                        <h4>
+                        <h4 className="form__display-inputs--input-1">
                             Price:
                             <input
                                 type="number"
@@ -172,7 +172,7 @@ class ProductDetails extends Component {
                         </h4>
                     </label>
                     <label>
-                        <h4>
+                        <h4 className="form__display-inputs--input-2">
                             Description:
                             <input
                                 type="text"
@@ -183,7 +183,7 @@ class ProductDetails extends Component {
                         </h4>
                     </label>
                     <label>
-                        <h4>
+                        <h4 className="form__display-inputs--input-3">
                             In Stock: {this.state.inStock ? "Yes" : "No"}
                             <input
                                 type="checkbox"
